@@ -20,16 +20,12 @@ import br.com.manutencao.produtividade.data.LiberacaoChamadoData;
 
 public class CarregaDadosPlanilha {
 
-	private static final String EXCEL_FILE_PATH = "K:/Home/Manutenção/INDICADORES/Controles_Gerias_Manutenção.xlsx";
+	public static final String EXCEL_FILE_PATH = "K:/Home/Manutenção/INDICADORES/Controles_Gerias_Manutenção.xlsx";
 	
-	public static void main(String[] args) throws IOException {
-		List<LiberacaoChamadoData> listaChamados = new CarregaDadosPlanilha().lePlanilha(EXCEL_FILE_PATH);
-		
-		for (LiberacaoChamadoData liberacaoChamadoData : listaChamados) {
-			System.out.println("Chamado: " + liberacaoChamadoData.getChamado() + " - Recurso: " + liberacaoChamadoData.getRecurso().getNome());
-		}
-    }
-
+	public List<LiberacaoChamadoData> carregaDados(String pathPlanilha) throws FileNotFoundException, IOException {
+		return lePlanilha(pathPlanilha);
+	}
+	
 	private List<LiberacaoChamadoData> lePlanilha(String excelFilePath) throws FileNotFoundException, IOException {
 		List<LiberacaoChamadoData> listaChamados = new ArrayList<LiberacaoChamadoData>();
 		
