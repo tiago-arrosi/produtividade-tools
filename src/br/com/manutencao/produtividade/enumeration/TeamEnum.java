@@ -1,6 +1,6 @@
-package br.com.manutencao.produtividade.data;
+package br.com.manutencao.produtividade.enumeration;
 
-public enum EquipeEnum {
+public enum TeamEnum {
 
 	TFR1BL("Tiago Arrosi"), 
 	T01218("Marcelo Menegat"),
@@ -8,14 +8,14 @@ public enum EquipeEnum {
 	SI0963("Angelo Silva"),
 	T06618("Cleiton Pasquali"),
 	T01172("Rafael Stoffels"),
-	T03466("Rogério Guimarães"),
+	T03466("Rogerio Guimaraes"),
 	T05342("Felipe Golin"),
 	T109CJ("Peter Rizzon"),
 	T109X5("Daniane Gomes");
 	
 	private String nome;
 	
-	private EquipeEnum(String nome) {
+	private TeamEnum(String nome) {
 		this.nome = nome;
 	}
 

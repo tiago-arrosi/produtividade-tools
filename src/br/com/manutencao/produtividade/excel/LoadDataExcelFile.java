@@ -15,12 +15,12 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.joda.time.DateTime;
 
-import br.com.manutencao.produtividade.data.EquipeEnum;
 import br.com.manutencao.produtividade.data.LiberacaoChamadoData;
+import br.com.manutencao.produtividade.enumeration.TeamEnum;
 
-public class CarregaDadosPlanilha {
+public class LoadDataExcelFile {
 
-	public static final String EXCEL_FILE_PATH = "K:/Home/Manutenção/INDICADORES/Controles_Gerias_Manutenção.xlsx";
+	public static final String EXCEL_FILE_PATH = "files/Carga-Dados.xlsx";
 	
 	public List<LiberacaoChamadoData> carregaDados(String pathPlanilha) throws FileNotFoundException, IOException {
 		return lePlanilha(pathPlanilha);
@@ -34,7 +34,7 @@ public class CarregaDadosPlanilha {
         Workbook workbook = new XSSFWorkbook(inputStream);
         Sheet firstSheet = workbook.getSheetAt(0);
         Iterator<Row> iterator = firstSheet.iterator();
-        iterator.next(); //pula linha do cabeçalho
+        iterator.next(); //pula linha do cabeï¿½alho
          
         while (iterator.hasNext()) {
             Row nextRow = iterator.next();
@@ -56,7 +56,7 @@ public class CarregaDadosPlanilha {
 			LiberacaoChamadoData chamadoData = new LiberacaoChamadoData();
 			
 			chamadoData.setChamado((String) getCellValue(nextRow.getCell(0)));
-			chamadoData.setRecurso(EquipeEnum.valueOf((String) getCellValue(nextRow.getCell(1))));
+			chamadoData.setRecurso(TeamEnum.valueOf((String) getCellValue(nextRow.getCell(1))));
 			
 			try {
 				chamadoData.setDataFNC(new DateTime(getCellValue(nextRow.getCell(4))));

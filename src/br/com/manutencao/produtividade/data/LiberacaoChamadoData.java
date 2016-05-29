@@ -2,15 +2,17 @@ package br.com.manutencao.produtividade.data;
 
 import org.joda.time.DateTime;
 
+import br.com.manutencao.produtividade.enumeration.TeamEnum;
+
 public class LiberacaoChamadoData {
 
-	private EquipeEnum recurso;
+	private TeamEnum recurso;
 	private String chamado;
 	private DateTime dataLiberacao;
 	private DateTime dataSLA;
 	private DateTime dataFNC;
 	
-	public LiberacaoChamadoData(EquipeEnum recurso, String chamado, DateTime dataLiberacao, DateTime dataSLA,
+	public LiberacaoChamadoData(TeamEnum recurso, String chamado, DateTime dataLiberacao, DateTime dataSLA,
 			DateTime dataFNC) {
 		this.recurso = recurso;
 		this.chamado = chamado;
@@ -22,12 +24,12 @@ public class LiberacaoChamadoData {
 	public LiberacaoChamadoData() {
 	}
 
-	public EquipeEnum getRecurso() {
+	public TeamEnum getRecurso() {
 		return recurso;
 	}
 
 
-	public void setRecurso(EquipeEnum recurso) {
+	public void setRecurso(TeamEnum recurso) {
 		this.recurso = recurso;
 	}
 
