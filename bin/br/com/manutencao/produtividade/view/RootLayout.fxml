@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="700.0" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.manutencao.produtividade.view.RootLayoutController">
+	<top>
+		<MenuBar BorderPane.alignment="CENTER">
+		  <menus>
+		    <Menu mnemonicParsing="false" text="Statistics">
+		      <items>
+		        <MenuItem mnemonicParsing="false" onAction="#handleShowProdutividadeRecursoMesStatistics" text="Show Statistics" />
+		      </items>
+		    </Menu>
+		    <Menu mnemonicParsing="false" text="Help">
+		      <items>
+		        <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About" />
+		      </items>
+		    </Menu>
+		  </menus>
+		</MenuBar>
+	</top>
+</BorderPane>

@@ -1,6 +1,7 @@
 package br.com.manutencao.produtividade.data;
 
 import java.time.Month;
+import java.util.HashMap;
 import java.util.Map;
 
 import br.com.manutencao.produtividade.enumeration.TeamEnum;
@@ -8,7 +9,7 @@ import br.com.manutencao.produtividade.enumeration.TeamEnum;
 public class MonthlyProductivityData {
 	
 	private TeamEnum person;
-	private Map<Month, Integer> monthQuantity;
+	private Map<Month, Integer> monthQuantity = new HashMap<Month, Integer>();
 	
 	public MonthlyProductivityData(TeamEnum person) {
 		super();
