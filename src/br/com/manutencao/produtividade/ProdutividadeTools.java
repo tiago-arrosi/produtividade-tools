@@ -8,6 +8,7 @@ import br.com.manutencao.produtividade.data.LiberacaoChamadoData;
 import br.com.manutencao.produtividade.excel.LoadDataExcelFile;
 import br.com.manutencao.produtividade.grafico.GraficoProdutividadeRecursoMes;
 import br.com.manutencao.produtividade.view.BirthdayStatisticsController;
+import br.com.manutencao.produtividade.view.RootLayoutController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -42,6 +43,10 @@ public class ProdutividadeTools extends Application {
             // Mostra a scene (cena) contendo oroot layout.
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
+            
+            RootLayoutController controller = loader.getController();
+			controller.setMainApp(this);
+            
             primaryStage.show();
         } catch (IOException e) {
             e.printStackTrace();
